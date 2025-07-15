@@ -3,66 +3,393 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Terms of Use</title>
+  <title>Terms of Service – RuleBase</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #333;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.7;
+      color: #2c3e50;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
     }
-    h1 {
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 20px;
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
     }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 50px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-info {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 25px;
+      margin-top: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-info p {
+      margin: 0;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .content {
+      padding: 50px;
+    }
+
     h2 {
-      font-size: 20px;
-      margin-top: 24px;
+      color: #2c3e50;
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 40px 0 20px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #667eea;
+      position: relative;
     }
-    p, li {
-      font-size: 16px;
+
+    h2::before {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: #764ba2;
+      border-radius: 2px;
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 1rem;
+      text-align: justify;
+    }
+
+    ul {
+      margin: 20px 0;
+      padding-left: 0;
+    }
+
+    li {
+      background: #f8f9fa;
+      margin: 10px 0;
+      padding: 15px 20px;
+      border-radius: 10px;
+      border-left: 4px solid #667eea;
+      list-style: none;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    li:hover {
+      background: #e3f2fd;
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+    }
+
+    li::before {
+      content: '•';
+      color: #667eea;
+      font-weight: bold;
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+    }
+
+    strong {
+      color: #2c3e50;
+      font-weight: 600;
+    }
+
+    a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #764ba2;
+      text-decoration: underline;
+    }
+
+    .important-notice {
+      background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 30px 0;
+      border-left: 5px solid #e17055;
+      position: relative;
+    }
+
+    .important-notice::before {
+      content: '⚠️';
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 1.5rem;
+    }
+
+    .feature-highlight {
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 30px 0;
+      border-left: 5px solid #667eea;
+      position: relative;
+    }
+
+    .feature-highlight::before {
+      content: '✨';
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 1.5rem;
+    }
+
+    .prohibited-section {
+      background: linear-gradient(135deg, #ffb3ba 0%, #ffdfba 100%);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 30px 0;
+      border-left: 5px solid #e74c3c;
+      position: relative;
+    }
+
+    .prohibited-section::before {
+      content: '🚫';
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 1.5rem;
+    }
+
+    .contact-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 20px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      color: white;
+      border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+      margin-bottom: 25px;
+    }
+
+    .contact-section h2::before {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .contact-section a {
+      color: #ffeaa7;
+      font-weight: 600;
+    }
+
+    .contact-section a:hover {
+      color: white;
+    }
+
+    .section-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 50%;
+      font-weight: bold;
+      margin-right: 15px;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+      
+      .header {
+        padding: 40px 30px 30px;
+      }
+      
+      .header h1 {
+        font-size: 2.2rem;
+      }
+      
+      .content {
+        padding: 30px 25px;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .contact-section {
+        padding: 30px 25px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Terms of Use</h1>
-  <p><strong>Effective Date:</strong> [Insert Date]</p>
+  <div class="container">
+    <div class="header">
+      <h1>Terms of Service</h1>
+      <div class="header-info">
+        <p><strong>Effective Date:</strong> July 14, 2025<br>
+           <strong>Last Updated:</strong> July 15, 2025<br>
+           <strong>App Name:</strong> RuleBase<br>
+           <strong>Contact:</strong> rulebaseteam@gmail.com</p>
+      </div>
+    </div>
 
-  <p>Welcome to the <strong>Sports Rules & Trivia</strong> app ("the App"). By using this App, you agree to these Terms of Use. Please read them carefully.</p>
+    <div class="content">
+      <h2><span class="section-number">1</span>Agreement to Terms</h2>
+      <p>By using RuleBase, you agree to these Terms of Service and our Privacy Policy. If you disagree with any part, you must stop using the app immediately.</p>
 
-  <h2>1. Use of the App</h2>
-  <p>You may use the App to access sports rule content and play trivia games for entertainment purposes. You are responsible for any data or charges incurred from your mobile provider.</p>
+      <h2><span class="section-number">2</span>Eligibility</h2>
+      <p>To use RuleBase, you must:</p>
+      <ul>
+        <li>Be at least 13 years old (or 16 in some jurisdictions)</li>
+        <li>Have legal capacity to agree to these terms</li>
+        <li>Not be prohibited from using the app by applicable law</li>
+      </ul>
+      <p>Parents or guardians are responsible for the use of the app by minors under their care.</p>
 
-  <h2>2. Account Usage</h2>
-  <p>Account creation is optional. If you choose to register, you agree to provide accurate information and keep your credentials secure. You are responsible for all activity under your account.</p>
+      <h2><span class="section-number">3</span>Account Access</h2>
+      <p>You may sign in using Google, Apple, or email/password. Guest accounts are temporary and may lose data if not linked. You are responsible for maintaining the confidentiality of your login credentials and any activities under your account.</p>
 
-  <h2>3. Leaderboards and Content</h2>
-  <p>Leaderboard rankings and trivia questions are part of the App experience. We reserve the right to moderate or remove usernames that are offensive or inappropriate.</p>
+      <h2><span class="section-number">4</span>User-Generated Content</h2>
+      <p>You are solely responsible for any content you create or share (e.g., bios, usernames, team names, chats). You grant RuleBase a royalty-free, worldwide license to use and display your content within the app as part of core features (e.g., leaderboards, profiles).</p>
 
-  <h2>4. Prohibited Conduct</h2>
-  <p>You may not:</p>
-  <ul>
-    <li>Use cheats, bots, or automated tools</li>
-    <li>Attempt to access restricted areas of the app</li>
-    <li>Disrupt or exploit the app or other users</li>
-  </ul>
+      <h2><span class="section-number">5</span>Prohibited Activities</h2>
+      <div class="prohibited-section">
+        <p><strong>You agree not to:</strong></p>
+        <ul>
+          <li>Post offensive, violent, illegal, or misleading content</li>
+          <li>Cheat, hack, or manipulate trivia results or rankings</li>
+          <li>Harass, impersonate, or threaten other users</li>
+          <li>Use bots, automation, or unauthorized tools</li>
+          <li>Reverse-engineer or attempt to disrupt the app or its infrastructure</li>
+        </ul>
+        <p>Violation of these rules may result in suspension or permanent account termination.</p>
+      </div>
 
-  <h2>5. Intellectual Property</h2>
-  <p>All app content, including trivia questions and rule summaries, is the property of the App developer or its content sources and may not be copied or redistributed.</p>
+      <h2><span class="section-number">6</span>Core App Features</h2>
+      <div class="feature-highlight">
+        <p><strong>RuleBase provides:</strong></p>
+        <ul>
+          <li>Solo and multiplayer trivia experiences</li>
+          <li>AI-generated and summarized rulebook content</li>
+          <li>Leaderboards and user profiles</li>
+          <li>Matchmaking, friend lists, and push notifications</li>
+          <li>Speech-to-text input (optional)</li>
+          <li>Content moderation tools to ensure user safety</li>
+        </ul>
+      </div>
 
-  <h2>6. Termination</h2>
-  <p>We reserve the right to suspend or terminate access if you violate these terms or misuse the app.</p>
+      <h2><span class="section-number">7</span>Rule Content Disclaimer</h2>
+      <div class="important-notice">
+        <p>RuleBase is not affiliated with, endorsed by, or officially connected to any professional sports leagues, teams, associations, or governing bodies (e.g., NFL, NBA, MLB, PGA, FIFA, NHL, NCAA).</p>
+        <p>All rulebook content is derived from publicly available information and may be summarized or paraphrased for clarity and engagement. It is intended for educational and entertainment purposes only. Users should consult official rulebooks or sports authorities for authoritative guidance.</p>
+      </div>
 
-  <h2>7. Disclaimer</h2>
-  <p>This app is provided "as is" without warranties of any kind. We are not liable for data loss, bugs, or any damages from using the app.</p>
+      <h2><span class="section-number">8</span>Intellectual Property</h2>
+      <p>All app content, design, branding, and source code are owned by Landry Taylor unless otherwise stated. You may not copy, distribute, modify, or commercially exploit any part of the app without express written permission.</p>
 
-  <h2>8. Updates and Changes</h2>
-  <p>These terms may be updated from time to time. Continued use of the app constitutes acceptance of any changes.</p>
+      <h2><span class="section-number">9</span>AI & Automated Content</h2>
+      <p>Some app features, including trivia questions and moderation tools, may rely on AI technologies such as OpenAI. These systems may produce occasional inaccuracies or unintended outputs. Use discretion and report any concerns to support.</p>
 
-  <h2>9. Contact Us</h2>
-  <p>For questions about these terms, contact us at [Insert Contact Email].</p>
+      <h2><span class="section-number">10</span>Termination</h2>
+      <p>We may suspend or terminate your access to RuleBase if:</p>
+      <ul>
+        <li>You violate these Terms of Service</li>
+        <li>You post harmful, offensive, or illegal content</li>
+        <li>Your behavior endangers the app's users or infrastructure</li>
+      </ul>
+      <p>You may delete your account at any time by contacting support.</p>
+
+      <h2><span class="section-number">11</span>Disclaimers</h2>
+      <p>The app is provided "as is" and "as available." We make no warranties regarding uptime, trivia accuracy, or the precision of rule summaries. Use RuleBase at your own risk.</p>
+
+      <h2><span class="section-number">12</span>Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, RuleBase is not liable for:</p>
+      <ul>
+        <li>Indirect, incidental, or consequential damages</li>
+        <li>Loss of data, leaderboard status, or in-app progress</li>
+        <li>Inaccuracies in AI-generated content or trivia</li>
+        <li>Misuse of the app by third parties</li>
+      </ul>
+
+      <h2><span class="section-number">13</span>Governing Law</h2>
+      <p>These Terms are governed by the laws of the State of Texas, United States. Any disputes shall be resolved in the courts of Dallas County, Texas.</p>
+
+      <h2><span class="section-number">14</span>Changes to Terms</h2>
+      <p>We may update these Terms of Service at any time. Continued use of RuleBase after updates signifies your acceptance of the new terms. Material changes will be announced in-app or via email.</p>
+
+      <div class="contact-section">
+        <h2><span class="section-number">15</span>Contact</h2>
+        <p>If you have questions or support requests, contact us:</p>
+        <ul>
+          <li>Email: <a href="mailto:rulebaseteam@gmail.com">rulebaseteam@gmail.com</a></li>
+          <li>In-App: Go to Settings &gt; Contact Support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
